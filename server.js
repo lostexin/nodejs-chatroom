@@ -38,7 +38,7 @@ function serveStatic(res, cache, filepath) {
            if (err){
                send404(res);
            }else {
-               sendFile(res, filepath, cache[filepath]);
+               sendFile(res, filepath, data);
                cache[filepath] = data;  // 缓存文件内容(Buffer类型)
            }
         });
