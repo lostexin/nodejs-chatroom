@@ -59,4 +59,5 @@ var server = http.createServer(function (req, res) {
 }).listen(3000, function () {
     console.log("服务器在本地3000端口启动");
 });
+// console.log(server);
 

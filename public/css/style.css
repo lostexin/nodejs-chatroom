@@ -1,0 +1,221 @@
+@charset "UTF-8";
+
+.m-room{
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+}
+
+/* 聊天室左侧模块 */
+/* #202225 #36393e #282b30 #dcddde */
+.m-room-l{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 200px;
+    bottom: 0;
+    background: #202225;
+}
+.m-room-l>div{
+    background: #36393e;
+}
+.m-room-l .u-chat{
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    right: 20px;
+    bottom: 183px;
+    border-radius: 3px;
+}
+.m-room-l .u-chat .scroller-wrapper{
+    height: 100%;
+    overflow-y: scroll;
+}
+.m-room-l .u-chat .scroller{
+    height: 1000px;
+}
+
+.m-room-l .u-input{
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    height: 155px;
+    border-radius: 3px;
+}
+.m-room-l .u-operation{
+    position: relative;
+    height: 35px;
+    padding: 0 12px;
+    background: #282b30;
+    border-radius: 3px 3px 0 0;
+}
+.m-room-l .u-operation> ul li{
+    float: left;
+    display: block;
+    height: 35px;
+    min-width: 30px;
+    margin-right: 20px;
+    line-height: 35px;
+    font-size: 14px;
+    text-align: center;
+    color: #dcddde;
+    cursor: pointer;
+}
+.m-room-l .u-operation>ul li:hover{
+    color: #71BBFE;
+}
+.m-room-l .u-operation span{
+    padding: 2px 4px;
+    border-radius: 3px;
+    background: #dcddde;
+    color: #282b30; /* 覆盖继承的hover样式 */
+}
+.m-room-l .commandlist{
+    position: absolute;
+    left: 12px;
+    bottom: 40px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background: #dcddde;
+}
+.m-room-l .commandlist .triangle-d{
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: #dcddde;
+}
+.m-room-l .commandlist li{
+    display: block;
+    height: 30px;
+    min-width: 120px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #282b30;
+}
+
+.m-room-l .textwrapper{
+    height: 120px;
+}
+.m-room-l .typeinput{
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 3px 5px;
+    border-radius: 3px;
+    background: #36393e;
+    color: #dcddde;
+    outline: none;
+    font: 18px/22px "Arial", "幼圆", "微软雅黑", "sans-serif";
+}
+
+/* 聊天室右侧模块 */
+.m-room-r{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    background: #282b30;
+}
+.m-room-r .u-info{
+    height: 40px;
+    background: #202225;
+}
+.m-room-r .u-info li{
+    float: left;
+    display: block;
+    height: 40px;
+    padding: 0 8px;
+    line-height: 40px;
+}
+.m-room-r .u-info i{
+    font-size: 18px;
+    color: #dcddde;
+    cursor: pointer;
+}
+.m-room-r .u-info i:hover{
+    color: #71BBFE;
+}
+
+.m-room-r .u-roomlist{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 3px;
+}
+.m-room-r .u-roomlist p{
+    height: 35px;
+    padding: 0 12px;
+    border-top-left-radius: 3px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #dcddde;
+    background: #282b30;
+}
+.m-room-r .listwrapper{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+.m-room-r .listwrapper ul{
+    height: 1000px;
+}
+.m-room-r .listwrapper li{
+    display: block;
+    height: 32px;
+    padding: 0 8px;
+    line-height: 32px;
+    font-size: 15px;
+    color: #dcddde;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+.m-room-r .listwrapper li:hover{
+    background: #585B60;
+}
+
+.m-room-l .u-chat .scroller-wrapper::-webkit-scrollbar,
+.m-room-l .typeinput::-webkit-scrollbar,
+.m-room-r .listwrapper::-webkit-scrollbar{
+    width: 14px;
+}
+/* 滚动条内层轨道 */
+.m-room-l .u-chat .scroller-wrapper::-webkit-scrollbar-track-piece,
+.m-room-l .typeinput::-webkit-scrollbar-track-piece{
+    border: 3px solid #36393e;
+    border-radius: 7px;
+    background-color: #2f3136;
+}
+/* 滚动条滚轮 */
+.m-room-l .u-chat .scroller-wrapper::-webkit-scrollbar-thumb,
+.m-room-l .typeinput::-webkit-scrollbar-thumb,
+.m-room-r .listwrapper::-webkit-scrollbar-thumb{
+    border: 3px solid #36393e;
+    border-radius: 7px;
+    background: #1e2124;
+}
+
+.m-room-r .listwrapper::-webkit-scrollbar-track-piece{
+    border: 3px solid #282b30;
+    border-radius: 7px;
+    background-color: #2f3136;
+}
+.m-room-r .listwrapper::-webkit-scrollbar-thumb{
+    border-color: #282b30;
+}

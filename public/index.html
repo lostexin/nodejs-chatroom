@@ -5,8 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>基于Node.js的聊天室</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="m-room">
+    <!-- 聊天室左侧模块 -->
+    <div class="m-room-l">
+        <!-- 聊天框 -->
+        <div class="u-chat">
+            <div class="scroller-wrapper">
+                <div class="scroller"></div>
+            </div>
+        </div>
 
+        <!-- 输入框 -->
+        <div class="u-input">
+            <!-- 操作区域 -->
+            <div class="u-operation">
+                <ul>
+                    <li><span>\Command</span></li>
+                    <li>@</li>
+                </ul>
+                
+                <div class="commandlist">
+                    <i class="triangle-d"></i>
+                    <ul>
+                        <li>\cn name&nbsp;&nbsp;更改用户名</li>
+                        <li>\cr room&nbsp;&nbsp;更换房间</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="textwrapper">
+                <textarea class="typeinput" placeholder="请在这里输入内容"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <!-- 聊天室左侧模块/ -->
+
+    <!-- 聊天室右侧模块 -->
+    <div class="m-room-r">
+
+        <div class="u-info">
+            <ul>
+                <li title="fork me on github"><i class="fa fa-github" aria-hidden="true"></i></li>
+                <li><i class="fa fa-question-circle" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+
+        <div class="u-roomlist">
+            <p>房间列表</p>
+            <div class="listwrapper">
+                <ul>
+                    <li>大厅</li>
+                    <li>这个房间的名字过长了呃呃呃</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- 聊天室右侧模块/ -->
+
+</div>
 </body>
 </html>

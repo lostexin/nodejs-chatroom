@@ -1,0 +1,46 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #efeff4;
+    font-family: "Arial", "幼圆", "微软雅黑", "sans-serif";
+}
+*, :after, :before{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,p,ul,textarea{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+textarea{
+    resize: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    -webkit-transition: color .5s;
+    -moz-transition: color .5s;
+    -ms-transition: color .5s;
+    -o-transition: color .5s;
+    transition: color .5s;
+}
+img{
+    border: none;
+}
+
+.f-clearfix:after{
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.f-clearfix{
+    *zoom: 1;
+}
