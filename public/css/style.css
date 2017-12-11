@@ -1,9 +1,96 @@
 @charset "UTF-8";
 
+/* 遮罩模块 */
+.m-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.m-mask .u-userinfo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    height: 130px;
+    margin-left: -140px;
+    margin-top: -65px;
+}
+.m-mask .u-userinfo p{
+    height: 30px;
+    max-width: 280px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.m-mask .u-userinfo .error{
+    color: #ff542b;
+}
+.m-mask .u-userinfo div{
+    position: relative;
+    margin: 10px 0;
+}
+.m-mask .u-userinfo input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    padding: 0 20px 0 45px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    line-height: 50px;
+    font-size: 20px;
+    color: #333;
+}
+.m-mask .u-userinfo input::selection{
+    background: #333;
+    color: #fff;
+}
+.m-mask .fa-user-o{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+    text-align: center;
+    color: #ddd;
+}
+
 .m-room{
     position: relative;
     height: 100%;
-    min-height: 400px;
+}
+
+.m-room .u-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #202225;
+}
+.m-room .u-info li{
+    float: left;
+    display: block;
+    height: 40px;
+    padding: 0 8px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #dcddde;
+}
+.m-room .u-info i,
+.m-room .u-info a{
+    color: #dcddde;
+    cursor: pointer;
 }
 
 /* 聊天室左侧模块 */
@@ -16,6 +103,26 @@
     bottom: 0;
     background: #202225;
 }
+
+.m-room-l .u-info{
+    left: 20px;
+}
+.m-room-l .u-info li{
+    font-size: 16px;
+}
+.m-room-l .u-info i{
+    margin: 0 4px;
+    font-style: normal;
+    font-size: 10px;
+}
+.m-room-l .u-info a:hover,
+.m-room-l .u-info a:hover i{
+    color: #71BBFE;
+}
+.m-room-l .u-info .u-cur-room:hover{
+    color: #71BBFE;
+}
+
 .m-room-l>div{
     background: #36393e;
 }
@@ -29,10 +136,48 @@
 }
 .m-room-l .u-chat .scroller-wrapper{
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .m-room-l .u-chat .scroller{
-    height: 1000px;
+    /* height: 1000px; */
+    padding: 8px 12px;
+}
+
+.m-room-l .u-chatframe>div{
+    margin: 8px 0;
+}
+.m-room-l .u-chatframe ul{
+    overflow: hidden;
+}
+.m-room-l .u-chatframe li{
+    float: left;
+    display: block;
+    height: 30px;
+    margin-right: 12px;
+    color: #dcddde;
+    line-height: 30px;
+    font-size: 12px;
+}
+.m-room-l .u-chatframe .username{
+    color: #5ed0ba;
+    font-size: 16px;
+    cursor: pointer;
+}
+.m-room-l .u-chatframe p{
+    padding-left: 12px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #dcddde;
+}
+.m-room-l .u-chatframe em{
+    color: #71BBFE;
+}
+.m-room-l .u-broadblock ul{
+    padding-left: 12px;
+    border-left: 2px solid #ccc;
+}
+.m-room-l .u-chatblock p{
+    white-space: pre-wrap;
 }
 
 .m-room-l .u-input{
@@ -72,6 +217,7 @@
     color: #282b30; /* 覆盖继承的hover样式 */
 }
 .m-room-l .commandlist{
+    display: none;
     position: absolute;
     left: 12px;
     bottom: 40px;
@@ -91,7 +237,6 @@
 }
 .m-room-l .commandlist li{
     display: block;
-    height: 30px;
     min-width: 120px;
     line-height: 30px;
     font-size: 14px;
@@ -105,12 +250,12 @@
     display: block;
     height: 100%;
     width: 100%;
-    padding: 3px 5px;
+    padding: 8px 12px;
     border-radius: 3px;
     background: #36393e;
     color: #dcddde;
     outline: none;
-    font: 18px/22px "Arial", "幼圆", "微软雅黑", "sans-serif";
+    font: 16px/22px "Arial", "幼圆", "微软雅黑", "sans-serif";
 }
 
 /* 聊天室右侧模块 */
@@ -122,22 +267,7 @@
     width: 200px;
     background: #282b30;
 }
-.m-room-r .u-info{
-    height: 40px;
-    background: #202225;
-}
-.m-room-r .u-info li{
-    float: left;
-    display: block;
-    height: 40px;
-    padding: 0 8px;
-    line-height: 40px;
-}
-.m-room-r .u-info i{
-    font-size: 18px;
-    color: #dcddde;
-    cursor: pointer;
-}
+
 .m-room-r .u-info i:hover{
     color: #71BBFE;
 }
@@ -148,12 +278,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border-top-left-radius: 3px;
+    border-radius: 3px;
 }
 .m-room-r .u-roomlist p{
     height: 35px;
     padding: 0 12px;
-    border-top-left-radius: 3px;
     line-height: 35px;
     font-size: 16px;
     color: #dcddde;
@@ -218,4 +347,191 @@
 }
 .m-room-r .listwrapper::-webkit-scrollbar-thumb{
     border-color: #282b30;
+}
+
+/* 过渡 */
+.m-room-l, .m-room-r,
+.m-room-r .u-info,
+.m-room-l>div,
+.m-room-l .typeinput,
+.m-room-r .u-roomlist p,
+.m-room-r,
+.m-room-l .u-chatframe p,
+.m-room .u-info li,
+.m-room .u-info a,
+.m-room .u-info i,
+.m-room-r .listwrapper li,
+.m-room-l .u-operation,
+.m-room-l .u-operation span,
+.m-room-l .u-operation> ul li,
+.m-room-l .u-chatframe li{
+    -webkit-transition: background .5s, color .5s;
+    -moz-transition: background .5s, color .5s;
+    -o-transition: background .5s, color .5s;
+    transition: background .5s, color .5s;
+}
+
+/* 聊天室信息模块 */
+@keyframes elastic {
+    0% {
+        transform: scale(0);
+    }
+    55% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@-moz-keyframes elastic {
+    0% {
+        transform: scale(0);
+    }
+    55% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@-o-keyframes elastic {
+    0% {
+        transform: scale(0);
+    }
+    55% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.m-info-panel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    /* visibility .3s 3s后visibility发生变化(变成hidden, 但没有表现效果),
+     配合opacity使用, 防止visibility变化太快, 导致opacity的表现效果看不出来 */
+    -webkit-transition: opacity .3s, visibility .3s;
+    -moz-transition: opacity .3s, visibility .3s;
+    -o-transition: opacity .3s, visibility .3s;
+    transition: opacity .3s, visibility .3s;
+}
+.f-elastic-show{
+    opacity: 1;
+    visibility: visible;
+    -webkit-animation: elastic .3s;
+    -o-animation: elastic .3s;
+    animation: elastic .3s;
+}
+
+.m-info-panel .u-close{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+}
+.m-info-panel .u-close:before,
+.m-info-panel .u-close:after{
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 2px;
+    width: 30px;
+    height: 2px;
+    background-color: #222;
+    -webkit-transition: transform .3s;
+    -moz-transition: transform .3s;
+    -ms-transition: transform .3s;
+    -o-transition: transform .3s;
+    transition: transform .3s;
+}
+.m-info-panel .u-close:before{
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.m-info-panel .u-close:after{
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.m-info-panel .u-close:hover:before{
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.m-info-panel .u-close:hover:after{
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.m-info-panel ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    margin-top: -135px;
+    margin-left: -150px;
+}
+.m-info-panel li{
+    display: block;
+    font-size: 16px;
+    line-height: 30px;
+    color: #333;
+}
+.m-info-panel li>span{
+    position: relative;
+    display: inline-block;
+    height: 30px;
+}
+.m-info-panel li>span:before,
+.m-info-panel li>span:after{
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 101%;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left-color: #5ed0ba;
+}
+.m-info-panel li>span:after{
+    right: auto;
+    left: 101%;
+    border: 8px solid transparent;
+    border-right-color: #5ed0ba;
+}
+.m-info-panel li a{
+    color: #888;
+}
+.m-info-panel li a:hover{
+    color: #5ed0ba;
 }

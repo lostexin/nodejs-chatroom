@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #efeff4;
     font-family: "Arial", "幼圆", "微软雅黑", "sans-serif";
+    overflow: hidden;
 }
 *, :after, :before{
     -webkit-box-sizing: border-box;

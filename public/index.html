@@ -6,17 +6,63 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>基于Node.js的聊天室</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!-- 遮罩模块 -->
+<div class="m-mask">
+    <!--<div class="u-mask-bg"></div>-->
+    <div class="u-userinfo">
+        <p class="title">取个名字, 让后按Enter进入聊天室吧...</p>
+        <div>
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+            <input class="u-token" type="text" placeholder="Let's go!">
+        </div>
+        <p class="error"><!--错误信息错误信息错误信息错误信息错误信息错误信息--></p>
+    </div>
+</div>
+
 <div class="m-room">
     <!-- 聊天室左侧模块 -->
     <div class="m-room-l">
+        <div class="u-info">
+            <ul>
+                <li>Developed By
+                    <a href="http://lostex.cn" target="_blank">
+                        lostexin<i class="fa fa-external-link" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>当前房间: <span class="u-cur-room">大厅</span></li>
+            </ul>
+        </div>
+
         <!-- 聊天框 -->
         <div class="u-chat">
             <div class="scroller-wrapper">
-                <div class="scroller"></div>
+                <div class="scroller u-chatframe">
+                    <div class="u-chatblock">
+                        <ul>
+                            <li class="username">lostexin</li>
+                            <li class="submit-time">20:37</li>
+                        </ul>
+                        <p>My name is Barry Allen, and I'm the fastest man alive.</p>
+                    </div>
+                    <div class="u-broadblock">
+                        <ul>
+                            <li class="username">afei</li>
+                            <li>已进入房间, 当前房间人数: xxx</li>
+                        </ul>
+                    </div>
+                    <div class="u-chatblock">
+                        <ul>
+                            <li class="username">afei</li>
+                            <li class="submit-time">20:38</li>
+                        </ul>
+                        <p>啊哈哈哈<em>@lostexin</em></p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -25,21 +71,24 @@
             <!-- 操作区域 -->
             <div class="u-operation">
                 <ul>
-                    <li><span>\Command</span></li>
-                    <li>@</li>
+                    <li class="u-command"><span>Command</span></li>
+                    <li class="u-aimat">@</li>
                 </ul>
-                
+
                 <div class="commandlist">
                     <i class="triangle-d"></i>
                     <ul>
                         <li>\cn name&nbsp;&nbsp;更改用户名</li>
-                        <li>\cr room&nbsp;&nbsp;更换房间</li>
+                        <li>\cr room&nbsp;&nbsp;更换/创建房间</li>
+                        <li>快捷键</li>
+                        <li>发送&nbsp;&nbsp;Enter</li>
+                        <li>换行&nbsp;&nbsp;Ctrl + Enter</li>
                     </ul>
                 </div>
             </div>
 
             <div class="textwrapper">
-                <textarea class="typeinput" placeholder="请在这里输入内容"></textarea>
+                <textarea class="typeinput" placeholder="请在这里输入内容" spellcheck="false"></textarea>
             </div>
         </div>
 
@@ -51,8 +100,13 @@
 
         <div class="u-info">
             <ul>
-                <li title="fork me on github"><i class="fa fa-github" aria-hidden="true"></i></li>
-                <li><i class="fa fa-question-circle" aria-hidden="true"></i></li>
+                <li>
+                    <a href="https://github.com/lostexin/nodejs-chatroom" target="_blank" title="上github把我fork下来">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li><i class="fa fa-info-circle" aria-hidden="true"></i></li>
+                <li class="f-skin"><i class="fa fa-sun-o" aria-hidden="true" title="亮色系界面"></i></li>
             </ul>
         </div>
 
@@ -70,5 +124,28 @@
     <!-- 聊天室右侧模块/ -->
 
 </div>
+
+<!-- 聊天室信息模块 -->
+<div class="m-info-panel">
+    <div class="u-close"></div>
+    <ul class="f-clearfix">
+        <li><span>作品名: 基于Node.js的聊天室(未使用Express)</span></li>
+        <li><span>环境要求: Node >= 6 | IE9+ | Win7\8\10 Mac ?</span></li>
+        <li><span>作者(咸鱼): lostexin</span></li>
+        <li><span>咸鱼的小屋: <a href="http://lostex.cn" target="_blank">点击这里进入</a></span></li>
+        <li><span>参考: <a href="https://book.douban.com/subject/25870705/" target="_blank">《Node.js实战》</a></span></li>
+        <li>
+            <span>制作目的: Node.js小练习(后期使用Express进行改版)、
+                <span style="text-decoration: line-through">能够和基友愉快的玩耍</span>
+            </span>
+        </li>
+        <li><span>源码: 挂在<a href="https://github.com/lostexin/nodejs-chatroom" target="_blank">Github</a>上了</span></li>
+    </ul>
+</div>
+<!-- 聊天室信息模块/ -->
+<script src="scripts/jquery-1.12.4.min.js"></script>
+<script src="scripts/socket.io.slim.js"></script>
+<script src="scripts/chat-ui.js"></script>
+<script src="scripts/chat-client.js"></script>
 </body>
 </html>

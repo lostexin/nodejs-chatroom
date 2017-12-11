@@ -1,0 +1,49 @@
+.m-room-l, .m-room-r,
+.m-room .u-info{
+    background: #fff;
+}
+.m-room-l>div,
+.m-room-l .typeinput,
+.m-room-r .u-roomlist p,
+.m-room-r{
+    color: #333;
+    background: #eee;
+}
+
+.m-room .u-info li,
+.m-room .u-info a,
+.m-room .u-info i,
+.m-room-l .u-chatblock p,
+.m-room-r .listwrapper li{
+    color: #333;
+}
+
+.m-room-l .u-operation{
+    background: #ddd;
+}
+.m-room-l .u-operation span{
+    background: #333;
+    color: #dcddde;
+}
+.m-room-l .u-operation> ul li,
+.m-room-l .u-broadblock li+li,
+.m-room-l .u-chatblock li+li{
+    color: #333;
+}
+
+.m-room-r .listwrapper li:hover{
+    background: #ccc;
+}
+
+/* 滚动条内层轨道 */
+.m-room-l .u-chat .scroller-wrapper::-webkit-scrollbar-track-piece,
+.m-room-l .typeinput::-webkit-scrollbar-track-piece,
+.m-room-r .listwrapper::-webkit-scrollbar-track-piece,
+    /* 滚动条滚轮 */
+.m-room-l .u-chat .scroller-wrapper::-webkit-scrollbar-thumb,
+.m-room-l .typeinput::-webkit-scrollbar-thumb,
+.m-room-r .listwrapper::-webkit-scrollbar-thumb{
+    border: 3px solid #eee;
+    background-color: #ccc;
+}
+
