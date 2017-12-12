@@ -9,6 +9,7 @@
     <!--<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/skin.css" data-skin="light">
 </head>
 <body>
 <!-- 遮罩模块 -->
@@ -37,7 +38,7 @@
         <div class="u-chat">
             <div class="scroller-wrapper">
                 <div class="scroller u-chatframe">
-                    <div class="u-chatblock">
+                    <!--<div class="u-chatblock">
                         <ul>
                             <li class="username">lostexin</li>
                             <li class="submit-time">20:37</li>
@@ -57,6 +58,9 @@
                         </ul>
                         <p>啊哈哈哈<em>@lostexin</em></p>
                     </div>
+                    <div class="u-promptblock">
+                        <p>命令无效哦~</p>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -67,17 +71,18 @@
             <div class="u-operation">
                 <ul>
                     <li class="u-command"><span>Command</span></li>
+                    <li class="u-newline"><span>\n</span></li>
                     <li class="u-aimat">@</li>
                 </ul>
 
                 <div class="commandlist">
                     <i class="triangle-d"></i>
                     <ul>
-                        <li>\cn name&nbsp;&nbsp;更改用户名</li>
-                        <li>\cr room&nbsp;&nbsp;更换/创建房间</li>
+                        <li>/cn name&nbsp;&nbsp;更改用户名</li>
+                        <li>/cr room&nbsp;&nbsp;更换/创建房间</li>
                         <li>快捷键</li>
                         <li>发送&nbsp;&nbsp;Enter</li>
-                        <li>换行&nbsp;&nbsp;Ctrl + Enter</li>
+                        <li>换行&nbsp;&nbsp;Ctrl + Enter 手机端使用"\n"按钮换行</li>
                     </ul>
                 </div>
             </div>
@@ -107,7 +112,7 @@
                     </a>
                 </li>
                 <li><i class="fa fa-info-circle" aria-hidden="true"></i></li>
-                <li class="f-skin"><i class="fa fa-sun-o" aria-hidden="true" title="亮色系界面"></i></li>
+                <li class="f-skin"><i class="fa fa-moon-o" aria-hidden="true" title="暗色系界面"></i></li>
             </ul>
         </div>
 
@@ -131,7 +136,8 @@
     <div class="u-close"></div>
     <ul class="f-clearfix">
         <li><span>作品名: 基于Node.js的聊天室(未使用Express)</span></li>
-        <li><span>环境要求: Node >= 6 | IE9+ | Win7\8\10 Mac ? | 手机端 ?</span></li>
+        <li><span>环境要求: Node >= 6(裸奔) | Win7\8\9 | Linux</span></li>
+        <li><span>跨浏览器: 各大主流浏览器以及IE9+</span></li>
         <li><span>作者(咸鱼): lostexin</span></li>
         <li><span>咸鱼的小屋: <a href="http://lostex.cn" target="_blank">点击这里进入</a></span></li>
         <li><span>参考: <a href="https://book.douban.com/subject/25870705/" target="_blank">《Node.js实战》</a></span></li>

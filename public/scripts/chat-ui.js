@@ -13,6 +13,7 @@ var chatUI = (function () {
             comList = $(".commandlist");
 
         // 事件绑定
+        // 命令提示
         $(".u-command").on("click", function (e) {
             e.stopPropagation();    // 阻止事件冒泡
             if (!comShow){
@@ -27,6 +28,12 @@ var chatUI = (function () {
             comList.fadeOut("fast");
             comShow = false;
         });
+        // 换行
+        $(".u-newline").on("click", function () {
+            $(".typeinput").val(function (index, origin) {
+                return origin + "\n";
+            }).focus();
+        });
 
         $(".fa-info-circle").on("click", function () {
            $(".m-info-panel").addClass("f-elastic-show");
@@ -36,30 +43,30 @@ var chatUI = (function () {
         });
 
         // skin
-        var dark = true,
+        var light = true,
             skin = $("<link>").attr({
                 rel: "stylesheet",
                 href: "css/skin.css",
                 "data-skin": "light"
             });
         $(".f-skin").find("i").on("click", function () {
-           if (dark){
+            if (light){
+                $("[data-skin='light']").remove();
+
+                $(this).attr({
+                    class: "fa fa-sun-o",
+                    title: "亮色系界面"
+                });
+                light = false;
+            }else {
                 $("head").append(skin);
 
                 $(this).attr({
                     class: "fa fa-moon-o",
                     title: "暗色系界面"
                 });
-                dark = false;
-           }else {
-               $("[data-skin='light']").remove();
-
-               $(this).attr({
-                   class: "fa fa-sun-o",
-                   title: "白色系界面"
-               });
-               dark = true;
-           }
+                light = true;
+            }
         });
 
         // 显示/隐藏右边栏

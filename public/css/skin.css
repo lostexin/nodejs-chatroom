@@ -54,9 +54,9 @@
 
 @media screen and (max-width: 768px){
     .m-room-r{
-        -webkit-box-shadow: -1px 0 2px #aaa;
-        -moz-box-shadow: -1px 0 2px #aaa;
-        box-shadow: -1px 0 2px #aaa;
+        -webkit-box-shadow: -1px 0 2px #ddd;
+        -moz-box-shadow: -1px 0 2px #ddd;
+        box-shadow: -1px 0 2px #ddd;
     }
 }
 

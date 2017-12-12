@@ -75,15 +75,15 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 50px;
     background: #202225;
 }
 .m-room .u-info li{
     float: left;
     display: block;
-    height: 40px;
+    height: 50px;
     padding: 0 8px;
-    line-height: 40px;
+    line-height: 50px;
     font-size: 18px;
     color: #dcddde;
     -webkit-tap-highlight-color: transparent;
@@ -130,7 +130,7 @@
 }
 .m-room-l .u-chat{
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 20px;
     right: 20px;
     bottom: 183px;
@@ -181,6 +181,11 @@
 }
 .m-room-l .u-chatblock p{
     white-space: pre-wrap;
+}
+.m-room-l .u-promptblock p{
+    font-size: 15px;
+    border-left: 2px solid #FF9358;
+    color: #FF9358;
 }
 
 .m-room-l .u-input{
@@ -243,6 +248,7 @@
 .m-room-l .commandlist li{
     display: block;
     min-width: 120px;
+    max-width: 220px;
     line-height: 30px;
     font-size: 14px;
     color: #282b30;
@@ -276,7 +282,7 @@
 
 .m-room-r .u-listbtn{
     position: fixed;
-    top: 5px;
+    top: 10px;
     right: 20px;
     z-index: 99;
     width: 30px;
@@ -335,29 +341,36 @@
     transform: rotate(-45deg);
 }
 
+.m-room-r .u-info{
+    padding-left: 8px;
+}
+.m-room-r .u-info li{
+    padding: 0 12px;
+    font-size: 20px;
+}
 .m-room-r .u-info i:hover{
     color: #71BBFE;
 }
 
 .m-room-r .u-roomlist{
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 0;
     right: 0;
     bottom: 0;
     border-radius: 3px;
 }
 .m-room-r .u-roomlist p{
-    height: 35px;
+    height: 40px;
     padding: 0 8px;
-    line-height: 35px;
+    line-height: 40px;
     font-size: 16px;
     color: #dcddde;
     background: #282b30;
 }
 .m-room-r .listwrapper{
     position: absolute;
-    top: 35px;
+    top: 40px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -369,9 +382,9 @@
 }
 .m-room-r .listwrapper li{
     display: block;
-    height: 32px;
+    height: 35px;
     padding: 0 8px;
-    line-height: 32px;
+    line-height: 35px;
     font-size: 15px;
     color: #dcddde;
     overflow: hidden;
@@ -534,6 +547,7 @@
     width: 34px;
     height: 34px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 .m-info-panel .u-close:before,
 .m-info-panel .u-close:after{
@@ -585,7 +599,7 @@
     left: 50%;
     z-index: 1;
     width: 300px;
-    margin-top: -165px;
+    margin-top: -180px;
     margin-left: -150px;
 }
 .m-info-panel li{
@@ -628,6 +642,6 @@
     .m-info-panel ul{
         width: 180px;
         margin-left: -90px;
-        margin-top: -210px;
+        margin-top: -225px;
     }
 }
