@@ -139,7 +139,7 @@ function addChatBlock(mes) {
         div.append(
             ul.append(user, sendtime), pra
         )
-    )
+    );
 
     chatUI.aimAt(); // 绑定艾特事件
 }

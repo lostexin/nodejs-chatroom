@@ -12,6 +12,10 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+*::selection{
+    color: #fff;
+    background-color: #aaa;
+}
 h1,h2,h3,h4,h5,h6,p,ul,textarea{
     margin: 0;
     padding: 0;
@@ -22,9 +26,11 @@ textarea{
 }
 li{
     list-style: none;
+    -webkit-tap-highlight-color: transparent;
 }
 a{
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
     -webkit-transition: color .5s;
     -moz-transition: color .5s;
     -ms-transition: color .5s;

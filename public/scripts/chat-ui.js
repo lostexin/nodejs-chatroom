@@ -61,6 +61,33 @@ var chatUI = (function () {
                dark = true;
            }
         });
+
+        // 显示/隐藏右边栏
+        var show = false;
+        $(".u-listbtn").on("click", function () {
+           if (!show){
+               $(this).addClass("f-showbar");
+               $(".m-room-r").css("right", "0");
+               show = true;
+           }else {
+               $(this).removeClass("f-showbar");
+               $(".m-room-r").css("right", "-202px");
+               show = false;
+           }
+        });
+        $(window).on("resize", function () {    // 窗口发生变化时
+           var pageWidth = getViewSize().pageWidth;
+           if (pageWidth > 768){   // >768显示右边栏
+               $(".u-listbtn").removeClass("f-showbar");
+               $(".m-room-l").css("right", "200px");
+               $(".m-room-r").css("right", "0");
+           }else {                  // <=768隐藏右边栏
+               $(".u-listbtn").removeClass("f-showbar");
+               show = false;
+               $(".m-room-l").css("right", "0");
+               $(".m-room-r").css("right", "-202px");
+           }
+        });
     }
 
     // 艾特事件绑定
@@ -78,6 +105,33 @@ var chatUI = (function () {
             var old = $(".typeinput").val();
             $(".typeinput").val(old + "@").focus();
         });
+    }
+
+    /**
+     * 获取页面可视窗口大小
+     * @returns {{pageWidth: Number, pageHeight: Number}}
+     */
+    function getViewSize() {
+        // IE9+等其它主流浏览器
+        var pageWidth = window.innerWidth,
+            pageHeight = window.innerHeight;
+
+        // IE和其它主流浏览器
+        if (typeof pageWidth != "number"){
+            // CSS1Compat 为标准模式 BackCompat 为混杂模式
+            if (document.compatMode == "CSS1Compat"){
+                pageWidth = document.documentElement.clientWidth;
+                pageHeight = document.documentElement.clientHeight;
+            }else {
+                pageWidth = document.body.clientWidth;
+                pageHeight = document.body.clientHeight;
+            }
+        }
+
+        return {
+            pageWidth: pageWidth,
+            pageHeight: pageHeight
+        }
     }
 
     return {

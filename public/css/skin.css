@@ -1,3 +1,8 @@
+*::selection{
+    color: #fff;
+    background-color: #666;
+}
+
 .m-room-l, .m-room-r,
 .m-room .u-info{
     background: #fff;
@@ -45,5 +50,13 @@
 .m-room-r .listwrapper::-webkit-scrollbar-thumb{
     border: 3px solid #eee;
     background-color: #ccc;
+}
+
+@media screen and (max-width: 768px){
+    .m-room-r{
+        -webkit-box-shadow: -1px 0 2px #aaa;
+        -moz-box-shadow: -1px 0 2px #aaa;
+        box-shadow: -1px 0 2px #aaa;
+    }
 }
 
