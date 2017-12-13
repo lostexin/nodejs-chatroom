@@ -100,7 +100,7 @@ $(function () {
             }else if (e.keyCode === 13){
                 e.preventDefault(); // 阻止换行
 
-                if (msg.trim().charAt(0) === "/"){
+                if (msg.trim().charAt(0) === "$"){
                     var isCommand = chat.processCommand(msg.trim());
                     if (!isCommand){
                         addPromptBlock("命令无效哦~");
@@ -170,6 +170,16 @@ Chat.prototype.processCommand = function (command) {
             });
             break;
         case "cr":
+            break;
+        case "clear":
+            words.shift();
+            var noBlank = words.join(" ");
+            if (!noBlank){
+                $(".u-chatframe").empty();
+            }else {
+                addPromptBlock("清除失败: clear命令之后不可再跟内容(参数)...");
+                scrollToBottom($(".u-chat").find(".scroller-wrapper"));
+            }
             break;
         default:    // 无法识别命令
             isCommand = false;

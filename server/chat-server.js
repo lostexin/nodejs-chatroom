@@ -47,13 +47,17 @@ function joinRoom(socket, room) {
         room: room
     });
 
-    var userInRoom = 0;
+    var userInRoom = 0,
+        userlist = [];
     // 所有在房间room中的clients
     io.sockets.in(room).clients(function (err, clients) {
         if (err) throw new Error(err);
 
         userInRoom = clients.length;
-        console.log("房间中的用户数: " + userInRoom);
+        clients.forEach(function (clientId) {
+           userlist.push(userNames[clientId]);
+        });
+        console.log("房间中的用户数: " + userInRoom + " 用户: " + userlist);
 
         // Flag: 'broadcast'
         // 向房间room中的所有sockets(除了发送者)发送message
@@ -99,7 +103,7 @@ function handleCommand(socket) {
 function handleChatMessages(socket) {
     // 接收(监听)发送的聊天消息
     socket.on("chatMsg", function (message) {
-        console.log(message);
+        console.log(userNames[socket.id], message);
         // 向当前房间中的所有客户端发送chatMes(注意这里是io或者io.sockets)
         io.sockets.in(message.room).emit("chatMsg",{
             content: message.content,
@@ -119,13 +123,17 @@ function handleClientDisconnection(socket) {
         nameUsed.splice(nameIndex, 1);   // 在已使用用户列表中删除用户
         delete userNames[socket.id];
 
-        var userInRoom = 0;
+        var userInRoom = 0,
+            userlist = [];
         // 所有在房间room中的clients
         io.sockets.in(curRoom[socket.id]).clients(function (err, clients) {
             if (err) throw new Error(err);
 
             userInRoom = clients.length;
-            console.log("房间中的用户数: " + userInRoom);
+            clients.forEach(function (clientId) {
+                userlist.push(userNames[clientId]);
+            });
+            console.log("房间中的用户数: " + userInRoom + " 用户: " + userlist);
 
             // 向用户所在房间的其他用户发送离开信息
             // emit的事件不能是disconnect, 因为客户端也有disconnect事件, 如果客户端监听disconnect事件,
